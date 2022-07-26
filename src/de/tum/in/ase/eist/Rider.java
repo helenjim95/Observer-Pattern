@@ -88,7 +88,9 @@ public class Rider<T> implements Observer<T> {
 //    Rider update method takes the update class as parameter
     @Override
     public void update(T state) {
-        pev.update(state);
+        PEV pev = getPEV();
+        boolean isAvailable = pev.isAvailable();
+        notifyAvailabilityChanged(pev, isAvailable);
     }
 
     public T getUpdate() {

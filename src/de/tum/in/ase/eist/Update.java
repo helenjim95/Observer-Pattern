@@ -10,7 +10,11 @@ public class Update<T> extends Subject<T> {
     }
 
     public void notify(PEV pev, boolean isAvailable) {
-        rider.setPEV(pev);
+        if (isAvailable) {
+            pev.unlock();
+        } else {
+            pev.lock();
+        }
     }
 
     public PEV getPEV() {
