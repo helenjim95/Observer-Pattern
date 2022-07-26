@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static sun.security.ssl.JsseJce.EcAvailability.isAvailable;
+
 // TODO realize the observer pattern
 public class Rider implements Observer {
 
@@ -86,6 +88,11 @@ public class Rider implements Observer {
     @Override
     public void update(Object state) {
         state.notify();
+    }
+
+    public void update(PEV pev, boolean isAvailable) {
+        state.notify();
+        notifyAvailabilityChanged(pev, isAvailable);
     }
 
 

@@ -10,6 +10,7 @@ public class Update<T> extends Subject<T> {
     }
 
     public void notify(PEV pev, boolean isAvailable) {
+        rider.update(pev, isAvailable);
     }
 
     public PEV getPEV() {
