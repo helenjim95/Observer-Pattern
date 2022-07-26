@@ -17,7 +17,8 @@ public abstract class Subject<T> {
 
     public List<Observer<T>> getObservers() { return observers;}
 
-    public void notifyObservers(T state) {
+//    Take no parameter
+    public void notifyObservers() {
         observers.forEach(observer -> observer.update(state));
     }
 

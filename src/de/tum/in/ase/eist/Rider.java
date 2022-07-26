@@ -9,7 +9,7 @@ import java.util.List;
 //Rider should implement Observer using generics
 public class Rider<T> implements Observer<T> {
 
-    private T state;
+    private Update<T> state;
     private final String name;
     private int age;
     private boolean hasHelmet;
@@ -94,6 +94,6 @@ public class Rider<T> implements Observer<T> {
     }
 
     public T getUpdate() {
-        return state;
+        return (T) state;
     }
 }

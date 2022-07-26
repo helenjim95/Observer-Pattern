@@ -25,6 +25,6 @@ public class Update<T> extends Subject<T> {
 
     @Override
     T getUpdate() {
-        return (T) pev.getUpdate();
+        return pev.getUpdate();
     }
 }
