@@ -3,7 +3,6 @@ package de.tum.in.ase.eist;
 import java.util.*;
 
 public abstract class Subject<T> {
-    // TODO realize observer pattern
     private List<Observer<T>> observers = new ArrayList<>();
 
     private T state;
@@ -22,7 +21,5 @@ public abstract class Subject<T> {
         observers.forEach(observer -> observer.update(state));
     }
 
-    public T getUpdate() {
-        return state;
-    }
+    abstract T getUpdate();
 }

@@ -10,7 +10,9 @@ public class Update<T> extends Subject<T> {
     }
 
     public void notify(PEV pev, boolean isAvailable) {
-        rider.update(pev, isAvailable);
+        rider.setPEV(pev);
+        notifyObservers();
+
     }
 
     public PEV getPEV() {
@@ -18,4 +20,10 @@ public class Update<T> extends Subject<T> {
     }
 
     public boolean isAvailable() { return isAvailable; }
+
+    @Override
+    T getUpdate() {
+        pev.getUpdate();
+        return null;
+    }
 }
