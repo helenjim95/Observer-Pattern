@@ -6,9 +6,9 @@ import java.util.Collections;
 import java.util.List;
 
 // TODO realize the observer pattern
-public class Rider<T> implements Observer<T> {
+public class Rider implements Observer {
 
-    private Update<T> state;
+    private Update state;
     private final String name;
     private int age;
     private boolean hasHelmet;
@@ -84,12 +84,13 @@ public class Rider<T> implements Observer<T> {
     }
 
     @Override
-    public void update(Update<T> state) {
+    public void update(Object state) {
         state.notify();
     }
 
+
     @Override
-    public Update<T> getUpdate() {
+    public Update getUpdate() {
         return state;
     }
 

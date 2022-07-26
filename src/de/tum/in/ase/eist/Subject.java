@@ -6,7 +6,7 @@ public abstract class Subject<T> {
     // TODO realize observer pattern
     private List<Observer<T>> observers = new ArrayList<>();
 
-    private Update<T> state;
+    private T state;
 
     public void subscribe(Observer<T> observer) {
         observers.add(observer);
@@ -16,11 +16,13 @@ public abstract class Subject<T> {
         observers.remove(observer);
     }
 
+    public List<Observer<T>> getObservers() { return observers;}
+
     public void notifyObservers() {
         observers.forEach(observer -> observer.update(state));
     }
 
-    public Update<T> getUpdate() {
+    public T getUpdate() {
         return state;
     }
 }

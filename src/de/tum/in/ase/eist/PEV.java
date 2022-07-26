@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // TODO realize the observer pattern
-public abstract class PEV<T> extends Subject<T> {
+public abstract class PEV extends Subject {
 
     private int chargeLevel;
     private final String licensePlate;
@@ -14,11 +14,15 @@ public abstract class PEV<T> extends Subject<T> {
 
     private final List<Rental> rentals;
 
+    private Update state;
+
+
     public PEV(int chargeLevel, String licensePlate) {
         this.chargeLevel = chargeLevel;
         this.licensePlate = licensePlate;
         this.available = true;
         rentals = new ArrayList<>();
+        this.state = new Update();
     }
 
     @Override
@@ -83,12 +87,12 @@ public abstract class PEV<T> extends Subject<T> {
         System.out.println("Riding " + toString());
     }
 
-    public void update(Update<T> update) {
-
+    public void update(Update state) {
+        state.notify();
     }
 
-    public void getUpdate(Observer<T> observer) {
-        observer.update(observer.getUpdate());
+    public void getUpdate(Observer observer) {
+        observer.getUpdate();
     }
 
 }
