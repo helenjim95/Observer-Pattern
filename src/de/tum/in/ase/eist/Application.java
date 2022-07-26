@@ -19,14 +19,14 @@ public class Application {
         Rental rental2 = pev.rent(now.plusSeconds(30), now.plusSeconds(60), rider2);
 
         // rider2 subscribes for updates on PEV XYZ42
-//      pev.subscribe(rider2); // TODO implement observer pattern
+        pev.subscribe(rider2); // TODO implement observer pattern
 
         rental1.start();
         // time passes...
         rental1.stop();
 
         // rider2 knows they can use PEV XYZ42
-//      pev.unsubscribe(rider2); // TODO implement observer pattern
+      pev.unsubscribe(rider2); // TODO implement observer pattern
         rental2.start();
     }
 }
