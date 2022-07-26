@@ -7,9 +7,9 @@ import java.util.List;
 
 // TODO realize the observer pattern
 //Rider should implement Observer using generics
-public class Rider implements Observer {
+public class Rider<T> implements Observer<T> {
 
-    private Object state;
+    private T state;
     private final String name;
     private int age;
     private boolean hasHelmet;
@@ -85,14 +85,13 @@ public class Rider implements Observer {
     }
 
 
-//    Rider has no method update that takes the update class as parameter
+//    Rider update method takes the update class as parameter
     @Override
-    public void update(Object state) {
-        this.state = state;
-
+    public void update(T state) {
+        pev.update(state);
     }
 
-    public Object getUpdate() {
+    public T getUpdate() {
         return state;
     }
 }

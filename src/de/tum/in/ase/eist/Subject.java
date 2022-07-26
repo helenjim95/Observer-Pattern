@@ -17,11 +17,11 @@ public abstract class Subject<T> {
 
     public List<Observer<T>> getObservers() { return observers;}
 
-    public void notifyObservers() {
+    public void notifyObservers(T state) {
         observers.forEach(observer -> observer.update(state));
     }
 
-    T getUpdate() {
-        return null;
-    }
+//    getUpdate should be abstract
+
+    abstract T getUpdate();
 }

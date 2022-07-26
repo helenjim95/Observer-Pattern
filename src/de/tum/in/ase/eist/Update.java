@@ -11,7 +11,7 @@ public class Update<T> extends Subject<T> {
 
     public void notify(PEV pev, boolean isAvailable) {
         rider.setPEV(pev);
-        notifyObservers();
+
 
     }
 
