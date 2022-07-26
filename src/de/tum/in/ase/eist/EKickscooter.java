@@ -11,4 +11,9 @@ public class EKickscooter extends PEV {
     public String toString() {
         return "E-Kickscooter " + getLicensePlate() + " with charge level of " + getChargeLevel();
     }
+
+    @Override
+    Object getUpdate() {
+        return toString();
+    }
 }

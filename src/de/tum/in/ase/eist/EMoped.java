@@ -11,4 +11,9 @@ public class EMoped extends PEV {
     public String toString() {
         return "E-Moped " + getLicensePlate() + " with charge level of " + getChargeLevel();
     }
+
+    @Override
+    Object getUpdate() {
+        return toString();
+    }
 }
