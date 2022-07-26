@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static sun.security.ssl.JsseJce.EcAvailability.isAvailable;
-
 // TODO realize the observer pattern
 public class Rider implements Observer {
 
