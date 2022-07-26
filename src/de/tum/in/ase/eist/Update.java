@@ -1,12 +1,12 @@
 package de.tum.in.ase.eist;
 
-public class Model extends Subject {
+public class Update<T> extends Subject<T> {
 
     private Rider rider;
     private PEV pev;
     private boolean isAvailable;
 
-    public Model() {
+    public Update() {
     }
 
     public void notify(PEV pev, boolean isAvailable) {
