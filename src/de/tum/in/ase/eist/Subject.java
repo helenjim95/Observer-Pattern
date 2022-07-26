@@ -21,5 +21,7 @@ public abstract class Subject<T> {
         observers.forEach(observer -> observer.update(state));
     }
 
-    abstract T getUpdate();
+    T getUpdate() {
+        return null;
+    }
 }
