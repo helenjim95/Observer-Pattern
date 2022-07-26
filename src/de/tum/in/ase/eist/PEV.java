@@ -94,7 +94,7 @@ public abstract class PEV extends Subject<Update> {
     }
 
 //    Method getUpdate
-    public Object getUpdate(Observer observer) {
+    public Update getUpdate(Observer observer) {
         return observer.getUpdate();
     }
 }

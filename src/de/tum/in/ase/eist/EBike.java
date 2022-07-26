@@ -2,6 +2,8 @@ package de.tum.in.ase.eist;
 
 public class EBike extends PEV {
 
+    private PEV pev;
+
     public EBike(int chargeLevel, String licensePlate) {
         super(chargeLevel, licensePlate);
         pricePerMinute = 3;
@@ -13,7 +15,7 @@ public class EBike extends PEV {
     }
 
     @Override
-    Object getUpdate() {
-        return toString();
+    Update getUpdate() {
+        return pev.getUpdate();
     }
 }

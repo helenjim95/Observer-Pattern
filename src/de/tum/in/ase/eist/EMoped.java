@@ -2,6 +2,8 @@ package de.tum.in.ase.eist;
 
 public class EMoped extends PEV {
 
+    private PEV pev;
+
     public EMoped(int chargeLevel, String licensePlate) {
         super(chargeLevel, licensePlate);
         pricePerMinute = 5;
@@ -13,7 +15,7 @@ public class EMoped extends PEV {
     }
 
     @Override
-    Object getUpdate() {
-        return toString();
+    Update getUpdate() {
+        return pev.getUpdate();
     }
 }

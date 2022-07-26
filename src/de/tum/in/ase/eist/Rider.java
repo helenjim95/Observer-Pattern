@@ -93,7 +93,7 @@ public class Rider<T> implements Observer<T> {
         notifyAvailabilityChanged(pev, isAvailable);
     }
 
-    public T getUpdate() {
-        return (T) state;
+    public Update<T> getUpdate() {
+        return state;
     }
 }

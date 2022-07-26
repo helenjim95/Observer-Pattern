@@ -2,6 +2,8 @@ package de.tum.in.ase.eist;
 
 public class EKickscooter extends PEV {
 
+    private PEV pev;
+
     public EKickscooter(int chargeLevel, String licensePlate) {
         super(chargeLevel, licensePlate);
         pricePerMinute = 2;
@@ -13,7 +15,7 @@ public class EKickscooter extends PEV {
     }
 
     @Override
-    Object getUpdate() {
-        return toString();
+    Update getUpdate() {
+        return pev.getUpdate();
     }
 }
