@@ -7,7 +7,7 @@ import java.util.List;
 // TODO realize the observer pattern
 //PEV should extend Subject using generics
 //PEV should not be generic
-public abstract class PEV extends Subject<Update> {
+public abstract class PEV extends Subject<Boolean> {
 
     private int chargeLevel;
     private final String licensePlate;
@@ -16,7 +16,7 @@ public abstract class PEV extends Subject<Update> {
 
     private final List<Rental> rentals;
 
-    private boolean state;
+    private Boolean update;
 
 
     public PEV(int chargeLevel, String licensePlate) {
@@ -89,12 +89,13 @@ public abstract class PEV extends Subject<Update> {
     }
 
 //    The parameter of Subject when extending it in PEV should be the concrete update class
-    public void update(boolean state) {
+    public void update(boolean update) {
+
     }
 
 //    Method getUpdate
-    public boolean getUpdate(Observer observer) {
-        return observer.getUpdate();
+    public Boolean getUpdate(Observer observer) {
+        return (Boolean) observer.getUpdate();
     }
 
 }

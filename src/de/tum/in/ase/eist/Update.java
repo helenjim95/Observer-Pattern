@@ -1,6 +1,6 @@
 package de.tum.in.ase.eist;
 
-public class Update<T> extends Subject<T> {
+public class Update<B> extends Subject<Boolean> {
 
     private Rider rider;
     private PEV pev;
@@ -43,7 +43,7 @@ public class Update<T> extends Subject<T> {
     }
 
     @Override
-    boolean getUpdate() {
+    Boolean getUpdate() {
         return pev.isAvailable();
     }
 

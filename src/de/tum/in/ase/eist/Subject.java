@@ -5,7 +5,7 @@ import java.util.*;
 public abstract class Subject<T> {
     private List<Observer<T>> observers = new ArrayList<>();
 
-    private boolean state;
+    private T update;
 
     public void subscribe(Observer<T> observer) {
         observers.add(observer);
@@ -23,5 +23,5 @@ public abstract class Subject<T> {
     }
 
 //    Should be abstract
-    abstract boolean getUpdate();
+    abstract T getUpdate();
 }

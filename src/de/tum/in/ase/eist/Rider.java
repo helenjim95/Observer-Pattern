@@ -8,9 +8,9 @@ import java.util.List;
 // TODO realize the observer pattern
 //Rider should implement Observer using generics
 //Rider should not be generic
-public class Rider implements Observer<Update> {
+public class Rider implements Observer<Boolean> {
 
-    private boolean state;
+    private Update<Boolean> update;
     private final String name;
     private int age;
     private boolean hasHelmet;
@@ -88,11 +88,11 @@ public class Rider implements Observer<Update> {
 
 //    Rider update method takes the update class as parameter
     @Override
-    public void update(boolean state) {
-        notifyAvailabilityChanged(this.pev, state);
+    public void update(Boolean update) {
+        notifyAvailabilityChanged(this.pev, update);
     }
 
-    public boolean getUpdate() {
-        return state;
+    public Boolean getUpdate() {
+        return update.getUpdate();
     }
 }

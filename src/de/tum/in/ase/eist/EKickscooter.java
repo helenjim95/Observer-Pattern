@@ -15,7 +15,7 @@ public class EKickscooter extends PEV {
     }
 
     @Override
-    boolean getUpdate() {
+    Boolean getUpdate() {
         return pev.getUpdate();
     }
 }
