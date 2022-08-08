@@ -10,7 +10,7 @@ import java.util.List;
 //Rider should not be generic
 public class Rider implements Observer<Update> {
 
-    private Update state;
+    private boolean state;
     private final String name;
     private int age;
     private boolean hasHelmet;
@@ -88,13 +88,11 @@ public class Rider implements Observer<Update> {
 
 //    Rider update method takes the update class as parameter
     @Override
-    public void update(Update state) {
-        PEV pev = getPEV();
-        boolean isAvailable = pev.isAvailable();
-        notifyAvailabilityChanged(pev, isAvailable);
+    public void update(boolean state) {
+        notifyAvailabilityChanged(this.pev, state);
     }
 
-    public Update getUpdate() {
+    public boolean getUpdate() {
         return state;
     }
 }

@@ -6,7 +6,10 @@ public class Update<T> extends Subject<T> {
     private PEV pev;
     private boolean isAvailable;
 
-    public Update() {
+
+    public Update(PEV pev, boolean isAvailable) {
+        this.pev = pev;
+        this.isAvailable = isAvailable;
     }
 
     public void notify(PEV pev, boolean isAvailable) {
@@ -21,10 +24,27 @@ public class Update<T> extends Subject<T> {
         return pev;
     }
 
-    public boolean isAvailable() { return isAvailable; }
+    public void setPEV(PEV pev) {
+        this.pev = pev;
+    }
+
+    public boolean getAvailable() { return isAvailable; }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
+    public Rider getRider() {
+        return rider;
+    }
+
+    public void setRider(Rider rider) {
+        this.rider = rider;
+    }
 
     @Override
-    T getUpdate() {
-        return (T) pev.getUpdate();
+    boolean getUpdate() {
+        return pev.isAvailable();
     }
+
 }

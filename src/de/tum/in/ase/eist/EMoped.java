@@ -15,7 +15,7 @@ public class EMoped extends PEV {
     }
 
     @Override
-    Update getUpdate() {
+    boolean getUpdate() {
         return pev.getUpdate();
     }
 }

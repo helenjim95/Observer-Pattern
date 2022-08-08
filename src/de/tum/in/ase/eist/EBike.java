@@ -15,7 +15,7 @@ public class EBike extends PEV {
     }
 
     @Override
-    Update getUpdate() {
+    boolean getUpdate() {
         return pev.getUpdate();
     }
 }

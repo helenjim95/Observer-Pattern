@@ -16,7 +16,7 @@ public abstract class PEV extends Subject<Update> {
 
     private final List<Rental> rentals;
 
-    private Update state;
+    private boolean state;
 
 
     public PEV(int chargeLevel, String licensePlate) {
@@ -89,12 +89,11 @@ public abstract class PEV extends Subject<Update> {
     }
 
 //    The parameter of Subject when extending it in PEV should be the concrete update class
-    public void update(Update state) {
-        notifyObservers();
+    public void update(boolean state) {
     }
 
 //    Method getUpdate
-    public Update getUpdate(Observer observer) {
+    public boolean getUpdate(Observer observer) {
         return observer.getUpdate();
     }
 
